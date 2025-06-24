@@ -1,0 +1,332 @@
+[
+    {
+        "uuid": "b7e3c2a1f4d84e1b9c7a2b3c4d5e6f70",
+        "title": "Introduction à Elasticsearch",
+        "content": "Elasticsearch est un moteur de recherche distribué, RESTful, capable de résoudre une grande variété de cas d’utilisation. Il est basé sur Apache Lucene et permet d’indexer, de rechercher et d’analyser de grandes quantités de données rapidement et en temps réel. Grâce à son architecture distribuée, Elasticsearch peut gérer des volumes de données massifs et fournir des résultats de recherche en quelques millisecondes, même sur des ensembles de données très volumineux. L’un des principaux avantages d’Elasticsearch est sa capacité à effectuer des recherches en texte intégral, des recherches structurées et des analyses complexes sur des données semi-structurées ou non structurées. Les utilisateurs peuvent tirer parti de fonctionnalités avancées telles que les agrégations, les filtres booléens, les recherches par proximité, les recherches par expressions régulières et bien plus encore. Elasticsearch est souvent utilisé dans des cas d’utilisation tels que la recherche de documents, l’analyse de logs, la surveillance de la sécurité, la recherche de produits dans le e-commerce, et l’analyse de données en temps réel. Son API RESTful permet une intégration facile avec de nombreux langages de programmation et frameworks, ce qui en fait un choix populaire pour les développeurs et les entreprises. L’indexation des données dans Elasticsearch repose sur la notion d’index, de type et de document. Chaque document est une représentation JSON d’un objet, et chaque index peut contenir des millions, voire des milliards de documents. Les mappings permettent de définir la structure des documents et les types de champs, ce qui facilite l’optimisation des recherches et des analyses. Pour garantir la pertinence des résultats, Elasticsearch utilise des algorithmes de scoring avancés et permet de personnaliser les analyzers pour s’adapter à différents langages et besoins métier. Enfin, la scalabilité horizontale d’Elasticsearch permet d’ajouter ou de retirer des nœuds du cluster sans interruption de service, assurant ainsi une haute disponibilité et une tolérance aux pannes. En résumé, Elasticsearch est un outil puissant et flexible pour la gestion et la recherche de données, adapté à de nombreux contextes professionnels et techniques.",
+        "summary": "Découverte d’Elasticsearch et de ses fonctionnalités principales.",
+        "author": {
+            "uuid": "c8e4f1b2a3d94e5c8b7a1d2c3e4f5a6b",
+            "fullname": "Alice Dupont",
+            "email": "alice.dupont@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "d1e2f3a4b5c647e8a9b0c1d2e3f4a5b6",
+                "name": "Recherche",
+                "normalized_name": "recherche",
+                "created_at": "2023-01-10T09:00:00Z"
+            },
+            {
+                "uuid": "f5a6b7c8d9e041b2c3d4e5f6a7b8c9d0",
+                "name": "Catégorisation",
+                "normalized_name": "categorisation",
+                "created_at": "2023-05-18T10:10:00Z"
+            }
+        ],
+        "tags": [
+            "elasticsearch",
+            "search",
+            "introduction"
+        ],
+        "published": true,
+        "created_at": "2023-01-15T10:00:00Z",
+        "updated_at": "2023-01-16T12:00:00Z"
+    },
+    {
+        "uuid": "e2c4b1d3f5a647e8b9c0a1d2e3f4b5c6",
+        "title": "Recherche avancée avec les regex",
+        "content": "Les expressions régulières, ou regex, sont des outils puissants pour effectuer des recherches avancées dans Elasticsearch. Elles permettent de définir des motifs complexes afin de filtrer ou de retrouver des documents contenant des chaînes de caractères spécifiques. Par exemple, il est possible de rechercher tous les documents dont le champ 'content' contient une date au format JJ/MM/AAAA ou une adresse e-mail valide. L’utilisation des regex dans Elasticsearch se fait principalement via les requêtes de type 'regexp'. Ces requêtes acceptent une syntaxe similaire à celle des expressions régulières classiques, bien que certaines limitations existent pour des raisons de performance et de sécurité. Il est important de noter que les requêtes regex peuvent être coûteuses en ressources, surtout sur de grands volumes de données. Il est donc recommandé de les utiliser avec parcimonie et de privilégier les champs de type 'keyword' pour ce type de recherche. Les regex sont également utiles pour valider des formats de données lors de l’indexation ou pour extraire des informations précises à partir de textes non structurés. Par exemple, on peut extraire tous les numéros de téléphone d’un ensemble de documents ou vérifier que des identifiants respectent un certain format. Pour optimiser les performances, il est conseillé de limiter la profondeur des motifs et d’éviter les quantificateurs trop larges. Enfin, les regex peuvent être combinées avec d’autres filtres ou agrégations pour affiner les résultats et obtenir des analyses plus précises. En résumé, les expressions régulières offrent une grande flexibilité pour la recherche et l’analyse de données dans Elasticsearch, à condition de bien maîtriser leur syntaxe et leurs implications sur les performances du cluster.",
+        "summary": "Utilisation des regex pour filtrer des résultats complexes.",
+        "author": {
+            "uuid": "f3b5c6d7e8a941b2c3d4e5f6a7b8c9d0",
+            "fullname": "Bob Martin",
+            "email": "bob.martin@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "a1b2c3d4e5f647e8b9c0d1e2f3a4b5c6",
+                "name": "Regex",
+                "normalized_name": "regex",
+                "created_at": "2023-02-20T11:30:00Z"
+            }
+        ],
+        "tags": [
+            "regex",
+            "elasticsearch",
+            "advanced"
+        ],
+        "published": true,
+        "created_at": "2023-02-22T14:00:00Z",
+        "updated_at": "2023-02-23T15:00:00Z"
+    },
+    {
+        "uuid": "c4e5f6a7b8d941b2c3d4e5f6a7b8c9d0",
+        "title": "Exact Text Search in Elasticsearch",
+        "content": "To perform exact text search in Elasticsearch, it is essential to understand the difference between 'text' and 'keyword' field types. The 'text' type is analyzed, meaning the content is broken down into tokens, lowercased, and processed by analyzers, making it suitable for full-text search. The 'keyword' type, on the other hand, is not analyzed and stores the entire value as a single token, which is ideal for exact matches. When you want to search for an exact phrase or value, you should use the 'keyword' type and the 'term' or 'terms' query. For example, searching for a specific email address or a unique identifier is best done on a 'keyword' field. Additionally, you can use the 'match_phrase' query on 'text' fields to find exact sequences of words. However, be aware that analyzers may still affect the results. For case-sensitive searches, always prefer 'keyword' fields. Elasticsearch also supports the 'operator: and' option in 'match' queries, which requires all terms to be present in the document. This can help narrow down results to those that exactly match the input. For more advanced scenarios, you can use the 'bool' query to combine multiple conditions and achieve precise control over your search logic. In summary, exact text search in Elasticsearch relies on understanding field mappings, choosing the right query types, and configuring analyzers appropriately. By leveraging these features, you can build robust search solutions that deliver accurate and relevant results to your users.",
+        "summary": "How to search for exact phrases in Elasticsearch.",
+        "author": {
+            "uuid": "d5e6f7a8b9c041b2c3d4e5f6a7b8c9d0",
+            "fullname": "Charlie Smith",
+            "email": "charlie.smith@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "e6f7a8b9c0d141b2c3d4e5f6a7b8c9d0",
+                "name": "Exact Search",
+                "normalized_name": "exact search",
+                "created_at": "2023-03-05T08:45:00Z"
+            }
+        ],
+        "tags": [
+            "exact",
+            "search",
+            "keyword"
+        ],
+        "published": true,
+        "created_at": "2023-03-10T09:30:00Z",
+        "updated_at": "2023-03-11T10:00:00Z"
+    },
+    {
+        "uuid": "f7a8b9c0d1e241b2c3d4e5f6a7b8c9d0",
+        "title": "Optimisation des performances Elasticsearch",
+        "content": "L’optimisation des performances dans Elasticsearch est cruciale pour garantir la rapidité et la pertinence des recherches, surtout lorsque le volume de données indexées devient important. Plusieurs axes d’optimisation existent, à commencer par la conception du mapping. Il est recommandé de définir précisément les types de champs et d’éviter les champs inutiles ou trop génériques. L’utilisation judicieuse des analyzers et des filtres permet également d’améliorer la qualité des résultats tout en réduisant la charge sur le cluster. La gestion des index est un autre aspect fondamental : il convient de surveiller la taille des index, de supprimer ou d’archiver les données obsolètes, et de recourir à l’indexation par lots pour limiter l’impact sur les performances. Les requêtes doivent être optimisées en privilégiant les filtres aux requêtes de type 'query', car les filtres sont mis en cache et exécutés plus rapidement. Il est aussi conseillé de limiter le nombre de résultats retournés et d’utiliser la pagination. La configuration matérielle du cluster joue un rôle important : il faut veiller à disposer de suffisamment de mémoire RAM, à utiliser des SSD pour le stockage, et à répartir les shards de manière équilibrée entre les nœuds. Enfin, la surveillance continue du cluster à l’aide d’outils comme Kibana ou Elastic Monitoring permet de détecter rapidement les goulets d’étranglement et d’ajuster la configuration en conséquence. En appliquant ces bonnes pratiques, il est possible de maintenir un haut niveau de performance et de garantir une expérience utilisateur optimale.",
+        "summary": "Conseils pour améliorer les performances d’Elasticsearch.",
+        "author": {
+            "uuid": "a9b0c1d2e3f441b2c3d4e5f6a7b8c9d0",
+            "fullname": "David Bernard",
+            "email": "david.bernard@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "b1c2d3e4f5a647e8b9c0a1d2e3f4b5c6",
+                "name": "Performance",
+                "normalized_name": "performance",
+                "created_at": "2023-04-12T13:20:00Z"
+            },
+            {
+                "uuid": "d1e2f3a4b5c647e8a9b0c1d2e3f4a5b6",
+                "name": "Recherche",
+                "normalized_name": "recherche",
+                "created_at": "2023-01-10T09:00:00Z"
+            },
+            {
+                "uuid": "d8e9f0a1b2c341b2c3d4e5f6a7b8c9d0",
+                "name": "Audit",
+                "normalized_name": "audit",
+                "created_at": "2023-10-05T09:00:00Z"
+            }
+        ],
+        "tags": [
+            "performance",
+            "elasticsearch",
+            "optimisation"
+        ],
+        "published": false,
+        "created_at": "2023-04-15T14:00:00Z",
+        "updated_at": "2023-04-16T15:00:00Z"
+    },
+    {
+        "uuid": "c1d2e3f4a5b647e8a9b0c1d2e3f4a5b6",
+        "title": "Gestion des catégories dans Elasticsearch",
+        "content": "La gestion des catégories dans Elasticsearch permet de structurer et d’organiser efficacement les articles ou documents indexés. Chaque catégorie peut être représentée par un objet contenant un identifiant unique, un nom et une date de création. L’utilisation du type 'nested' pour les catégories offre la possibilité de stocker plusieurs catégories par article, tout en conservant la capacité de requêter précisément sur les propriétés de chaque catégorie. Par exemple, il est possible de rechercher tous les articles appartenant à une catégorie spécifique ou créés après une certaine date. Les catégories facilitent également la navigation et le filtrage des résultats, en permettant aux utilisateurs de restreindre leur recherche à un domaine particulier. Pour optimiser la gestion des catégories, il est conseillé de normaliser les noms et d’éviter les doublons. L’indexation des catégories peut être enrichie par des métadonnées supplémentaires, telles que des descriptions ou des couleurs, afin d’améliorer l’expérience utilisateur. Enfin, la maintenance régulière des catégories, notamment la suppression des catégories obsolètes ou la fusion de catégories similaires, contribue à maintenir une base de données cohérente et pertinente. En résumé, une bonne gestion des catégories dans Elasticsearch améliore la qualité des recherches, la pertinence des résultats et la satisfaction des utilisateurs finaux.",
+        "summary": "Structurer les articles avec des catégories.",
+        "author": {
+            "uuid": "e3f4a5b6c7d841b2c3d4e5f6a7b8c9d0",
+            "fullname": "Emma Leroy",
+            "email": "emma.leroy@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "f5a6b7c8d9e041b2c3d4e5f6a7b8c9d0",
+                "name": "Catégorisation",
+                "normalized_name": "categorisation",
+                "created_at": "2023-05-18T10:10:00Z"
+            },
+            {
+                "uuid": "d1e2f3a4b5c647e8a9b0c1d2e3f4a5b6",
+                "name": "Recherche",
+                "normalized_name": "recherche",
+                "created_at": "2023-01-10T09:00:00Z"
+            }
+        ],
+        "tags": [
+            "categories",
+            "structure",
+            "elasticsearch"
+        ],
+        "published": true,
+        "created_at": "2023-05-20T11:00:00Z",
+        "updated_at": "2023-05-21T12:00:00Z"
+    },
+    {
+        "uuid": "b2c3d4e5f6a741b2c3d4e5f6a7b8c9d0",
+        "title": "Elasticsearch et la recherche multilingue",
+        "content": "Supporter plusieurs langues dans Elasticsearch nécessite une configuration adaptée des analyzers. Chaque langue possède ses propres règles de tokenisation, de stemming et de stop words. Par exemple, un analyzer français supprimera les articles et prépositions courants, tandis qu’un analyzer anglais gérera les pluriels et les conjugaisons différemment. Pour indexer des contenus multilingues, il est possible de définir des champs spécifiques par langue ou d’utiliser des analyzers personnalisés. L’utilisation de l’attribut 'fields' dans le mapping permet d’indexer un même champ avec plusieurs analyzers, offrant ainsi une grande flexibilité lors des recherches. Il est également important de détecter automatiquement la langue des documents, afin d’appliquer le bon analyzer lors de l’indexation. Des outils externes ou des plugins peuvent être utilisés à cet effet. La recherche multilingue implique aussi de gérer les synonymes, les variantes orthographiques et les traductions. Enfin, il convient de tester régulièrement la pertinence des résultats pour chaque langue et d’ajuster les analyzers en fonction des besoins métier. En résumé, la recherche multilingue dans Elasticsearch repose sur une configuration fine des analyzers, une détection précise des langues et une adaptation continue aux spécificités linguistiques des utilisateurs.",
+        "summary": "Configurer Elasticsearch pour la recherche multilingue.",
+        "author": {
+            "uuid": "c4d5e6f7a8b941b2c3d4e5f6a7b8c9d0",
+            "fullname": "Fatou Ndiaye",
+            "email": "fatou.ndiaye@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "e7f8a9b0c1d241b2c3d4e5f6a7b8c9d0",
+                "name": "Multilingue",
+                "normalized_name": "multilingue",
+                "created_at": "2023-06-25T16:00:00Z"
+            },
+            {
+                "uuid": "a1b2c3d4e5f647e8b9c0d1e2f3a4b5c6",
+                "name": "Regex",
+                "normalized_name": "regex",
+                "created_at": "2023-02-20T11:30:00Z"
+            }
+        ],
+        "tags": [
+            "multilingue",
+            "analyzer",
+            "elasticsearch"
+        ],
+        "published": true,
+        "created_at": "2023-06-28T17:00:00Z",
+        "updated_at": "2023-06-29T18:00:00Z"
+    },
+    {
+        "uuid": "d3e4f5a6b7c841b2c3d4e5f6a7b8c9d0",
+        "title": "Utilisation des tags pour filtrer les articles",
+        "content": "Les tags sont essentiels pour organiser et retrouver rapidement des articles spécifiques dans Elasticsearch. Ils permettent de catégoriser les contenus selon des thématiques, des technologies ou des besoins métier. Lorsqu’un article est indexé avec plusieurs tags, il devient possible de filtrer les résultats de recherche en fonction d’un ou plusieurs tags sélectionnés par l’utilisateur. Cette fonctionnalité est particulièrement utile dans les applications de gestion de contenu, les blogs ou les plateformes de e-commerce. Les tags facilitent également la mise en place de recommandations personnalisées, en suggérant des articles similaires ou complémentaires. Pour optimiser l’utilisation des tags, il est conseillé de limiter leur nombre par article et d’éviter les synonymes ou les doublons. L’indexation des tags sous forme de champ 'keyword' garantit des recherches rapides et précises. Enfin, la gestion dynamique des tags, avec la possibilité d’ajouter, de supprimer ou de fusionner des tags, contribue à maintenir une base de données cohérente et pertinente. En résumé, les tags sont un outil puissant pour améliorer la navigation, la recherche et la personnalisation des contenus dans Elasticsearch.",
+        "summary": "Filtrer les articles grâce aux tags.",
+        "author": {
+            "uuid": "f6a7b8c9d0e141b2c3d4e5f6a7b8c9d0",
+            "fullname": "Georges Petit",
+            "email": "georges.petit@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "a2b3c4d5e6f741b2c3d4e5f6a7b8c9d0",
+                "name": "Tags",
+                "normalized_name": "tags",
+                "created_at": "2023-07-15T12:00:00Z"
+            }
+        ],
+        "tags": [
+            "tags",
+            "filtrage",
+            "organisation"
+        ],
+        "published": false,
+        "created_at": "2023-07-18T13:00:00Z",
+        "updated_at": "2023-07-19T14:00:00Z"
+    },
+    {
+        "uuid": "e4f5a6b7c8d941b2c3d4e5f6a7b8c9d0",
+        "title": "Mise à jour des documents dans Elasticsearch",
+        "content": "La mise à jour des documents dans Elasticsearch est une opération courante qui peut être réalisée de plusieurs manières. L’API update permet de modifier partiellement ou totalement un document sans avoir à le supprimer puis le réindexer. Cette fonctionnalité est particulièrement utile pour les applications où les données évoluent fréquemment, comme les profils utilisateurs, les articles de blog ou les catalogues de produits. Lorsqu’une mise à jour est effectuée, Elasticsearch crée une nouvelle version du document et marque l’ancienne comme obsolète, ce qui garantit la cohérence des données. Il est possible de mettre à jour un ou plusieurs champs d’un document, d’ajouter ou de supprimer des éléments dans des tableaux, ou encore d’incrémenter des compteurs. L’API update supporte également les scripts, permettant d’effectuer des opérations complexes lors de la mise à jour. Par exemple, on peut calculer dynamiquement la valeur d’un champ en fonction d’autres champs du document. Il est important de surveiller l’impact des mises à jour fréquentes sur les performances du cluster, notamment en termes de gestion de l’espace disque et de fragmentation des index. Enfin, la gestion des conflits de version et la mise en place de stratégies de réindexation régulière contribuent à maintenir une base de données saine et performante. En résumé, la mise à jour des documents dans Elasticsearch est flexible, puissante et adaptée à de nombreux cas d’utilisation.",
+        "summary": "Comment modifier des documents existants.",
+        "author": {
+            "uuid": "a5b6c7d8e9f041b2c3d4e5f6a7b8c9d0",
+            "fullname": "Hélène Moreau",
+            "email": "helene.moreau@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "b3c4d5e6f7a841b2c3d4e5f6a7b8c9d0",
+                "name": "Mise à jour",
+                "normalized_name": "mise a jour",
+                "created_at": "2023-08-22T15:00:00Z"
+            },
+            {
+                "uuid": "e6f7a8b9c0d141b2c3d4e5f6a7b8c9d0",
+                "name": "Exact Search",
+                "normalized_name": "exact search",
+                "created_at": "2023-03-05T08:45:00Z"
+            },
+            {
+                "uuid": "c7d8e9f0a1b241b2c3d4e5f6a7b8c9d0",
+                "name": "Sécurité",
+                "normalized_name": "securite",
+                "created_at": "2023-09-10T10:00:00Z"
+            },
+            {
+                "uuid": "d8e9f0a1b2c341b2c3d4e5f6a7b8c9d0",
+                "name": "Audit",
+                "normalized_name": "audit",
+                "created_at": "2023-10-05T09:00:00Z"
+            }
+        ],
+        "tags": [
+            "update",
+            "documents",
+            "elasticsearch"
+        ],
+        "published": true,
+        "created_at": "2023-08-25T16:00:00Z",
+        "updated_at": "2023-08-26T17:00:00Z"
+    },
+    {
+        "uuid": "f5a6b7c8d9e041b2c3d4e5f6a7b8c9d0",
+        "title": "Sécurité et contrôle d’accès dans Elasticsearch",
+        "content": "La sécurité dans Elasticsearch est un enjeu majeur pour protéger les données indexées contre les accès non autorisés et les attaques potentielles. La mise en place de contrôles d’accès granulaires permet de définir précisément qui peut lire, écrire ou modifier les documents. Elasticsearch propose un système de gestion des utilisateurs et des rôles, permettant d’attribuer des permissions spécifiques à chaque utilisateur ou groupe d’utilisateurs. Par exemple, un administrateur peut avoir un accès complet à tous les index, tandis qu’un utilisateur lambda ne pourra consulter que certains documents. L’authentification peut être intégrée avec des annuaires externes comme LDAP ou Active Directory, renforçant ainsi la sécurité globale du système. Il est également possible de chiffrer les communications entre les nœuds du cluster et entre les clients et le cluster, grâce au protocole TLS. La gestion des logs et des audits permet de tracer toutes les actions effectuées sur le cluster, facilitant la détection des comportements suspects ou des tentatives d’intrusion. Enfin, il est recommandé de mettre à jour régulièrement Elasticsearch et ses plugins pour bénéficier des derniers correctifs de sécurité. En résumé, la sécurité et le contrôle d’accès dans Elasticsearch reposent sur une combinaison de bonnes pratiques, de configurations adaptées et d’une surveillance continue.",
+        "summary": "Mettre en place la sécurité dans Elasticsearch.",
+        "author": {
+            "uuid": "b6c7d8e9f0a141b2c3d4e5f6a7b8c9d0",
+            "fullname": "Ismaël Diallo",
+            "email": "ismael.diallo@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "c7d8e9f0a1b241b2c3d4e5f6a7b8c9d0",
+                "name": "Sécurité",
+                "normalized_name": "securite",
+                "created_at": "2023-09-10T10:00:00Z"
+            },
+            {
+                "uuid": "b1c2d3e4f5a647e8b9c0a1d2e3f4b5c6",
+                "name": "Performance",
+                "normalized_name": "performance",
+                "created_at": "2023-04-12T13:20:00Z"
+            }
+        ],
+        "tags": [
+            "sécurité",
+            "contrôle",
+            "elasticsearch"
+        ],
+        "published": true,
+        "created_at": "2023-09-12T11:00:00Z",
+        "updated_at": "2023-09-13T12:00:00Z"
+    },
+    {
+        "uuid": "a6b7c8d9e0f141b2c3d4e5f6a7b8c9d0",
+        "title": "Audit et logs dans Elasticsearch",
+        "content": "L’audit et la gestion des logs dans Elasticsearch sont essentiels pour assurer la traçabilité des actions et la maintenance du cluster. Les logs permettent de suivre l’activité du système, de détecter les erreurs, les ralentissements ou les tentatives d’accès non autorisées. Elasticsearch propose différents niveaux de logs, allant des informations générales aux erreurs critiques, en passant par les avertissements et les débogages. Il est possible de configurer la rotation et la rétention des logs afin d’optimiser l’utilisation de l’espace disque. L’audit, quant à lui, consiste à enregistrer toutes les actions sensibles effectuées sur le cluster, comme la création ou la suppression d’index, la modification des mappings ou la gestion des utilisateurs. Ces informations sont précieuses pour les équipes de sécurité et les administrateurs, qui peuvent ainsi reconstituer l’historique des opérations et identifier rapidement les anomalies. L’intégration avec des outils externes comme Logstash, Filebeat ou Kibana facilite la collecte, l’analyse et la visualisation des logs et des audits. Enfin, il est recommandé de mettre en place des alertes automatiques pour être informé en temps réel des incidents critiques. En résumé, l’audit et la gestion des logs dans Elasticsearch sont des piliers de la sécurité, de la conformité et de la performance du système.",
+        "summary": "Configurer l’audit et les logs dans Elasticsearch.",
+        "author": {
+            "uuid": "c7d8e9f0a1b241b2c3d4e5f6a7b8c9d0",
+            "fullname": "Julie Laurent",
+            "email": "julie.laurent@example.com"
+        },
+        "categories": [
+            {
+                "uuid": "d8e9f0a1b2c341b2c3d4e5f6a7b8c9d0",
+                "name": "Audit",
+                "normalized_name": "audit",
+                "created_at": "2023-10-05T09:00:00Z"
+            },
+            {
+                "uuid": "d1e2f3a4b5c647e8a9b0c1d2e3f4a5b6",
+                "name": "Recherche",
+                "normalized_name": "recherche",
+                "created_at": "2023-01-10T09:00:00Z"
+            }
+        ],
+        "tags": [
+            "audit",
+            "logs",
+            "elasticsearch"
+        ],
+        "published": false,
+        "created_at": "2023-10-08T10:00:00Z",
+        "updated_at": "2023-10-09T11:00:00Z"
+    }
+]

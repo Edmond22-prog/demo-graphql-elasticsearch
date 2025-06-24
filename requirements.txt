@@ -1,2 +1,5 @@
+elasticsearch==7.17.1
+envparse==0.2.0
 graphene-django==3.2.3
+graphene-pydantic==0.6.1
 pydantic==2.11.7

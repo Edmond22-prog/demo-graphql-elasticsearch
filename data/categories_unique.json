@@ -1,0 +1,44 @@
+[
+  {
+    "uuid": "d1e2f3a4b5c647e8a9b0c1d2e3f4a5b6",
+    "name": "Recherche",
+    "normalized_name": "recherche",
+    "created_at": "2023-01-10T09:00:00Z"
+  },
+  {
+    "uuid": "f5a6b7c8d9e041b2c3d4e5f6a7b8c9d0",
+    "name": "Catégorisation",
+    "normalized_name": "categorisation",
+    "created_at": "2023-05-18T10:10:00Z"
+  },
+  {
+    "uuid": "a1b2c3d4e5f647e8b9c0d1e2f3a4b5c6",
+    "name": "Regex",
+    "normalized_name": "regex",
+    "created_at": "2023-02-20T11:30:00Z"
+  },
+  {
+    "uuid": "e6f7a8b9c0d141b2c3d4e5f6a7b8c9d0",
+    "name": "Exact Search",
+    "normalized_name": "exact search",
+    "created_at": "2023-03-05T08:45:00Z"
+  },
+  {
+    "uuid": "b1c2d3e4f5a647e8b9c0a1d2e3f4b5c6",
+    "name": "Performance",
+    "normalized_name": "performance",
+    "created_at": "2023-04-12T13:20:00Z"
+  },
+  {
+    "uuid": "d8e9f0a1b2c341b2c3d4e5f6a7b8c9d0",
+    "name": "Audit",
+    "normalized_name": "audit",
+    "created_at": "2023-10-05T09:00:00Z"
+  },
+  {
+    "uuid": "e7f8a9b0c1d241b2c3d4e5f6a7b8c9d0",
+    "name": "Multilingue",
+    "normalized_name": "multilingue",
+    "created_at": "2023-06-25T16:00:00Z"
+  }
+]
