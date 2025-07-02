@@ -18,3 +18,11 @@ class Article(BaseModel):
     published: bool = False
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+
+
+class PaginatedArticles(BaseModel):
+    page: int
+    size: int
+    total: int
+    more: bool
+    articles: List[Article] = []
