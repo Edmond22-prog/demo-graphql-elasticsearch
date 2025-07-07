@@ -12,7 +12,7 @@ USER_MIN_PROP = {
 
 
 CATEGORY_PROP = {
-    "type": "nested",
+    "type": "object",
     "properties": {
         "uuid": {"type": "keyword"},
         "name": {"type": "text"},
